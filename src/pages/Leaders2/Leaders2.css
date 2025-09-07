@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+      --main_purple_color: #a117a4;
+      --thumbnail_item_width: 15vw;
+      --thumbnail_item_height: 36vh;
+      --thumbnail_container_left: 40%;
+      --thumbnail_container_bottom: 2em;
+      --main_image_container_width: 35%;
+      --main_image_container_height: 88%;
+      --main_image_container_left: 2%;
+      --main_image_container_top: 1.5%;
+}
+
+body{
+    font-family: Poppins;
+    background-color: #000;
+    color: #FFF;
+    margin: 0;
+    font-size: 12px;
+}
+
+.carousel {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .list .item {
+    position: absolute;
+    /* same as top,bottom, left, right set to 0 but concise*/
+    inset: 0 0 0 0;
+}
+
+
+.carousel .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.carousel .list .item .content {
+    position: absolute;
+    top: 5%;
+    width: 60%;
+    max-width: 60%;
+    right: 1%;
+    padding: 1%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #FFF;
+    text-shadow: 0 5px 10px #0004;   
+    border: 1px solid red; 
+}
+
+.carousel .list .item .content .title {
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.carousel .list .item .content .rank,
+.carousel .list .item .content .name {
+    font-weight: bold;
+    font-size: 5em;
+    line-height: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel .list .item .content .description {
+    font-size: 1.5em;
+}
+
+.carousel .list .item .content .name {
+    color: var(--main_purple_color);
+}
+
+.carousel .list .item .content .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 0.4em;
+    margin-top: 4em;
+}
+
+.carousel .list .item .content .buttons button {
+    border: none;
+    background-color: green;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+    margin-left: 1em;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.carousel .list .item .content .buttons button span{
+    margin: 1em;
+    justify-self: center;
+}
+
+.carousel .list .item .content .buttons button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: var(--main_purple_color);
+}
+
+
+.carousel .list .item .image-container {
+    position: absolute;
+    width: var(--main_image_container_width);
+    height: var(--main_image_container_height);
+    left: var(--main_image_container_left);
+    top: var(--main_image_container_top);
+    z-index: 3;
+}
+
+.carousel .list .item .image-container .main-image {
+    border-radius: 20px;
+}
+
+/* Thumbnails */
+.thumbnail {
+    position: absolute;
+    bottom: var(--thumbnail_container_bottom);
+    left: var(--thumbnail_container_left);
+    width: max-content;
+    z-index: 5;
+    display: flex;
+    gap: 2em;
+}
+
+.thumbnail .item {
+    width: var(--thumbnail_item_width);
+    height:  var(--thumbnail_item_height);
+    /* flex shrink to 0 so size does not shrink in mobile*/
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.thumbnail .item .content {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    border-radius: 0 0 20px 20px;
+    background-color: transparent;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.3),
+        rgba(0,0,0,0.2)
+    );
+    backdrop-filter: blur(20px);
+    color: #FFF;
+}
+
+.thumbnail .item .content .rank {
+    font-weight: bold;
+}
+
+/*Arrows */
+.arrows {
+    position: absolute;
+    bottom: 3%;
+    left: 10%;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    gap: 5em;
+
+    border: 1px solid red;
+}
+
+.arrows button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--main_purple_color);
+    border: none;
+    /* I forgot I am not using them as svgs but rather images
+    color: #fff;*/
+    transition: all 0.5s ease-in;
+}
+
+.arrows button::hover {
+    background-color: var(--main_purple_color);
+}
+
+/* Making sure the first element always appears before/ atop others */
+.carousel .list .item:nth-child(1) {
+    z-index: 1;
+}
+
+/*
+ * With such in mind, Can we workout a way that ensures: 
+   * That initial page Load isn't as ugly(literaly loads everything at once)
+   * Optimixing loading only the one in focus, and maybe about 3 more (Carousel item, not thumbnail) are loaded @ a time
+ */
+
+ /* ANIMATIONS AND TRANSITIONS */
+ .carousel .list .item:nth-child(1) .title,
+ .carousel .list .item:nth-child(1) .rank,
+ .carousel .list .item:nth-child(1) .name,
+ .carousel .list .item:nth-child(1) .description,
+ .carousel .list .item:nth-child(1) .image-container,
+ .carousel .list .item:nth-child(1) .buttons {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+ }
+
+ @keyframes showContent{
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+ }
+
+.carousel .list .item:nth-child(1) .title{
+    animation-delay: 1.2s;
+}
+ .carousel .list .item:nth-child(1) .rank{
+    animation-delay: 1.4s;
+ }
+ .carousel .list .item:nth-child(1) .name {
+    animation-delay: 1.6s;
+ }
+ .carousel .list .item:nth-child(1) .description {
+    animation-delay: 1.8s;
+ }
+
+ /* ANIMATION ON ARROW CLICK: NEXT */
+
+ /*
+  * We target the image to the first carousel element
+  * Resize it to the dimensions of the thumbnail
+  * Move it to the position of the first thumbnail such that the 2 overlap each other
+  * Ran the animation to show image
+  */
+ .carousel .list .item:nth-child(1) .image-container img {
+    position: absolute;
+    width: var(--thumbnail_item_width);
+    height: var(--thumbnail_item_height);
+    left: 50%;
+    /*
+    bottom: var(--thumbnail_container_bottom);*/
+    bottom: 50px;
+    border-radius: 20px;
+    border: 1px solid black;
+    z-index: 100;
+    animation: showImage 0.5s linear 1s forwards;
+ }
+
+ @keyframes showImage{
+    to{
+        width: var(--main_image_container_width);
+        height: var(--main_image_container_height);
+        left: var(--main_image_container_left);
+        top: var(--main_image_container_top);
+    }
+ }
+
+ .carousel.next .thumbnail .item:nth-child(1) {
+    width: 0;
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+ }
+
+ @keyframes shoeThumbnail {
+    to{
+        width: var(--thumbnail_item_width);
+    }
+ }
+
+ /* Not sure if below is necessary considering we don't get to see the furthest right end*/
+ .carousel.next .thumbnail {
+    transform: translateX(var(--thumbnail_item_width));
+    animation: transformThumbnail .5s linear 1 forwards;
+ }
+
+ @keyframes transformThumbnail{
+    to{
+        transform: translateX(0);
+    }
+ }
+ /* -------------------------------------------------------------------------------------*/
+
+ /*  PREV */
+ .carousel.prev .list .item:nth-child(2) {
+    z-index: 2;
+ }
+
+ .carousel.prev .list .item:nth-child(2) .bg-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: outImage 0.5s linear 1 forwards;
+ }
+
+ @keyframes outImage {
+    to{
+        width: var(--thumbnail_item_width);
+        height: var(--thumbnail_item_height);
+        border-radius: 20px;
+        /* Actual position of the first thumbnail item*/
+        left: var(--thumbnail_container_left);
+        bottom: var(--thumbnail_container_bottom);
+    }
+
+}
+
+.carousel.prev .thumbnail .item:nth-child(1) {
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.carousel.prev .list .item:nth-child(2) .title,
+.carousel.prev .list .item:nth-child(2) .rank,
+.carousel.prev .list .item:nth-child(2) .name,
+.carousel.prev .list .item:nth-child(2) .description,
+.carousel.prev .list .item:nth-child(2) .image-container,
+.carousel.prev .list .item:nth-child(2) .buttons {
+    animation: contentOut 0.5s linear 1 forwards;
+ }
+
+ @keyframes contentOut{
+    to{
+        transform: translateX(var(--thumbnail_item_width));
+        filter: blur(20px);
+        opacity: 0;
+    }
+ }
+
+ /* Preventing Button interaction whilst the animation is running */
+ .carousel.next .arrows button,
+ .carousel.prev .arrows button{
+    pointer-events: none;
+ }
+
+ /* The time class is used to check the running time of an animation*/
+ .time {
+    width: 100%;
+    height: 5px;
+    background-color: var(--main_purple_color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+ }
+
+ .carousel.next .time,
+ .carousel.prev .time {
+    width: 100%;
+    animation: timeRunning 2s linear 1 forwards;
+ }
+
+ @keyframes timeRunning {
+    to{
+        width: 0;
+    }
+ }
+
+ /* Responsiveness*/
+ @media screen and (max-width: 678px){
+    .carousel .list .item .content {
+        padding-right: 0; /*though we ignored it in our case*/
+    }
+    /* TEXT */
+    .carousel .list .item .content .rank {
+        font-size: 30px;
+    }
+ }

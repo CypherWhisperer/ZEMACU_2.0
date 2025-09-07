@@ -1,0 +1,29 @@
+.app-container {
+   position: relative;
+    display: grid;
+    /* Makes the layout responsive to sidebar-w  */
+    grid-template-columns: var(--sidebar-w, var(--sidebar_width)) 1fr;
+    min-height: 100vh;
+    transition: grid-template-columns .25s ease-in-out; /* Smooth */
+}
+
+ /* Fallback if JS doesn't set `--sidebar-w` - uses desktop var  
+ .app-container[style=""]{
+    /* Not required  - Just note that var() has fallback above  
+ }*/
+
+ /* To allow the main content to shrink  */
+ .page-content {
+    min-width: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ @media screen and (max-width: 768px) {
+   .app-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+ }

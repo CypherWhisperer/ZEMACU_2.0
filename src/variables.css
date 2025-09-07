@@ -1,0 +1,30 @@
+:root {
+    /* NVIGATION/ SIDEBAR */
+    /* Desktop Defaults */
+    --sidebar_width: 50px;
+    --sidebar_expand_width: 250px;
+
+    /* Mobile defaults in the case JS or other fails */
+    --sidebar_width_mobile: 100%;
+    --sidebar_expand_width_mobile: 100%;
+
+    /* responsive overrides: these change the referenced vars when viewport is small  */
+    /* the final value of sidebar width becomes responsive due to this without React needing to measure the window  */
+    @media (max-width: 768px){
+        :root{
+            --sidebar_width: var(--sidebar_width_mobile);
+            --sidebar_expand_width: var(var(--sidebar_expand_width_mobile));
+        }
+    }
+}
+
+/*  REMINDERS
+  - Have pages' main containers have `min-width: 0` to allow for shrinking if anything is behaving weirdly
+  - ensuring large children can wrap -> p,pre,code {overflow-wrap: break-word; }
+  - Pitfall(S): 
+    - Changing grid-template-columns triggers reflow. For smoother transitions consider animating non-layout
+     properties (but width of sidebar/grid is a layout change — short transitions 150–250ms are acceptable).
+    
+    - CSS Modules: Global :root variables are still usable. If you scope variables inside a CSS module class,
+     pages/components may not be able to read them. Prefer variables.css imported globally. 
+*/

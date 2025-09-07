@@ -1,0 +1,86 @@
+----------------------------------------------------------------------------------------------------
+-------------------------------------------  TODO  -------------------------------------------------
+
+- General: {
+    - General coherence in styling
+}
+
+- PAGES: {
+    - there are pages with JS 
+}
+
+WEEKLY: {
+    - Adding location, time thingies ( Am thinking of click events that trigger a small timed popus(sleek, impactfull))
+    - Optional: Dynamic data fetching for coordinator data 
+}
+
+- Verses: {
+    - Make a component out of it
+    - Move the array of verses to a js file under `/src/assets.data`
+}
+
+- Modals: {
+    - I am seeing a modal in the resources page (i.e from the script.js code)
+    - Consider also making a component out of the modal and leverage props for reusability:
+            - ponder on the design and the props to pass to make it truely reusable
+            - the fireship video on framer is really helpful, check it out 
+            - the backdrop component there, can we make it even more reusable for splash screen loads ?
+    
+    - Also consider having the `form.js` js integrated into it since they're related
+}
+
+Leaders Page 2: {
+    - setting width and height to 100 view dimensions displays bg image correctly but I am concerned about the sidebar
+    - responsive design
+    - functionality -JS, and not forgetting the WhatsApp integration thing
+    - root(animation duration, border radius, actual main image and thumbnail item positions)
+    - If it could break on larger screens, consider having maximum dimensions and work proportions from there
+}
+
+
+----------------------------------------------------------------------------------------------------
+------------------------------------------- ISSUES -------------------------------------------------
+Leaders Page 3: {
+    - The cursor:active thingy doesn't reset after the first grap - it maintains that state 'grabbing' after the first instance
+}
+
+Footer: {
+    - The `hr` isn't visible even when the browser (via developer tools) can recorgnize it 
+}
+
+WhatsApp: {
+    - Find a way to incorporate a device check to add an isMobile state (i.e taretting web vs mobile app)
+    - CONSIDER MAKING IT A COMPONENT SO THAT WE CAN HAVE ONE SINGLE SOURCE OF TRUTH
+      - Props {
+          - A name for whoever the button is to be to 
+          - A classname in the case of diff styling 
+          - A phone number
+          - QUESTION: Should the message also be dynamic - For now Ima have it the same everywhere
+      }
+}
+
+
+----------------------------------------------------------------------------------------------------
+-------------------------------------- IDEAS FOR LATTER --------------------------------------------
+LOGOS:{ 
+    - thinking of passing in svg syntax instead of an image to the anchor tags
+    - I remember in the React lessons there was a way of returning DOM elements
+    - This way, we can tweak the colors via css - OPENS DOORS TO MORE STYLING
+}
+
+Nav: {
+    - implement the expand-on-hover functionality
+    - Sync the expand animations on mobile - they look a bit ugly when toggling the bar
+}
+
+Leaders Page 2 {
+    - Optimizing the page- startig with the images;
+        - some thoughts crossed my mind: 
+            - what of, if it still performance intensive, how about droping the diff backgrounds, 
+            after all we are animating the main image. But hey, just a thought. I am not one to give up that easily
+
+}
+
+- LATER: Bringing framer motion to the game and refactoring the codebase into React world (React, Framer, Tailwind)
+- considering use of the diff svg arrows for micro-interactions. e.g leaders page - hoveing over arrows
+
