@@ -1,69 +1,268 @@
 import './Landing.css'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 // Components 
-import { Footer } from '../../components/components.js'
+import { Footer, WhatsAppButton, Modal } from '../../components/components.js'
+// Assets
+import { leadersData, testimonials, landscapeImage1, landscapeImage2, portraitImage1 } from '../../assets/assets.js'
 
+// GLOBAL PIECES OF STATE
+const [modalOpen, setModalOpen] = useState(false)
+const open = () => setModalOpen(true)
+const close = () => setModalOpen(false)
+
+// Functional Components
 export default function Landing(){
   return(
     <>
-      <main>
-        <h1> COMING SOON ...</h1>
-        {/* A SLIDER TO SHOWCASE WHO WE ARE */}
-        <div id="indexSliderContainer1" className="slideshow-container">
-          <div className="slide" style={{left: 0}}><img src="https://i.ibb.co/ks3FYzL0/IMG-20250407-WA0023.jpg" alt="Event 1" onload="console.log('Image 1 loaded')" onerror="console.log('Image 1 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/9mx7ncbC/IMG-20250407-WA0025.jpg" alt="Event 2" onload="console.log('Image 2 loaded')" onerror="console.log('Image 2 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/m5C10vxn/IMG-20250407-WA0039.jpg" alt="Event 3" onload="console.log('Image 3 loaded')" onerror="console.log('Image 3 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/Gv5M1kw3/IMG-20250407-WA0035.jpg" alt="Event 4" onerror="console.log('Image 4 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/4wZz5fTQ/IMG-20250407-WA0053.jpg" alt="Event 5" onload="console.log('Image 5 loaded')" onerror="console.log('Image 5 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/vtXBDCQ/IMG-20250407-WA0088.jpg"  alt="Event 6" onload="console.log('Image 6 loaded')" onerror="console.log('Image 6 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/GSc9Q2x/IMG-20250407-WA0052.jpg"  alt="Event 7" onload="console.log('Image 7 loaded')" onerror="console.log('Image 7 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/KcvVQ5DL/IMG-20250407-WA0065.jpg" alt="Event 8" onload="console.log('Image 8 loaded')" onerror="console.log('Image 8 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/ZztMDLWv/IMG-20250407-WA0066.jpg" alt="Event 9" onload="console.log('Image 9 loaded')" onerror="console.log('Image 9 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/vCvh4dgq/IMG-20250407-WA0074.jpg" alt="Event 10" onload="console.log('Image 10 loaded')" onerror="console.log('Image 10 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/d4B60SD4/IMG-20250407-WA0038.jpg" alt="Event 11" onload="console.log('Image 11 loaded')" onerror="console.log('Image 11 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/ynD5W4F4/IMG-20250407-WA0034.jpg" alt="Event 12" onload="console.log('Image 12 loaded')" onerror="console.log('Image 12 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/xKgkyM7h/IMG-20250407-WA0109.jpg" alt="Event 13" onload="console.log('Image 13 loaded')" onerror="console.log('Image 13 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/Dfmzqt2n/IMG-20250407-WA0089.jpg" alt="Event 14" onload="console.log('Image 14 loaded')" onerror="console.log('Image 14 failed to load')" /></div>
-          <div className="slide"><img src="https://i.ibb.co/CpWhGjWN/IMG-20250407-WA0075.jpg" alt="Event 15" onload="console.log('Image 15 loaded')" onerror="console.log('Image 15 failed to load')" /></div>
-        </div>
-        {/* TESTIMONIES - TO ESTABLISH THAT TRUST */}
-        <section id="Testimonials" className="testimonials-section py-8 mt-8 bg-gray-100">
-          <h2 id="indexTestimonialsHeading" className="text-3xl font-playfair text-[#a117a4] mb-6">What Our Members Say</h2>
-          <div id="indexTestimonialsContainer" className="testimonials-container">
-            <div className="testimonial-item active">
-              <img src="https://i.ibb.co/KcvVQ5DL/IMG-20250407-WA0065.jpg" alt="John Mwangi" className="testimonial-image" />
-              <div className="testimonial-text">
-                <strong className="block text-sm text-[#990bbf] mb-1">John Mwangi</strong>
-                <p>"This community has transformed my spiritual life! The worship sessions are incredible."</p>
-              </div>
+      <main className="landing-container">
+        <section className="hero-section">
+            <MainPortion />
+            <ImageSlider orientation={"landscape"} image={landscapeImage1} />
+            <Stats />
+            <ImageSlider orientation={"portrait"} image={portraitImage1}/>
+            <div className="landing-hero-item testimonial-heading">
+               What Our Members Say About US 
+               <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#c5c6c8">
+                  <path d="M16.939 10.939 12 15.879l-4.939-4.94-2.122 2.122L12 20.121l7.061-7.06z"/><path d="M16.939 3.939 12 8.879l-4.939-4.94-2.122 2.122L12 13.121l7.061-7.06z"/>
+                </svg>
+               </span>
             </div>
-            <div className="testimonial-item">
-              <img src="https://via.placeholder.com/40" alt="Grace Wanjiku" className="testimonial-image" />
-              <div className="testimonial-text">
-                <strong className="block text-sm text-[#990bbf] mb-1">Grace Wanjiku</strong>
-                <p>"The Bible studies here are so insightful and supportive."</p>
-              </div>
-            </div>
-            <div className="testimonial-item">
-              <img src="https://via.placeholder.com/40" alt="Daniel Otieno" className="testimonial-image" />
-              <div className="testimonial-text">
-                <strong className="block text-sm text-[#990bbf] mb-1">Daniel Otieno</strong>
-                <p>"I’ve found true fellowship and encouragement in this union."</p>
-              </div>
-            </div>
-            <div className="testimonial-item">
-              <img src="https://via.placeholder.com/40" alt="Mercy Njeri" className="testimonial-image" />
-              <div className="testimonial-text">
-                <strong className="block text-sm text-[#990bbf] mb-1">Mercy Njeri</strong>
-                <p>"The outreach programs have inspired me to serve others."</p>
-              </div>
-            </div>
-          </div>
+            <Testimonials />
+            <button className="landing-hero-item button1"> View Gallery </button>
+            <WhatsAppButton 
+              btnClassName={"landing-hero-item button2"}
+              btnText={"Chat"}
+              //TODO: FIND OUT WHICH OF THE LEADERS IS MORE FIT FOR SUCH
+              targetName={leadersData[9].name}
+              targetPhone={leadersData[9].phone}
+            />
         </section>
       </main>
-
-      <Footer />
+      <Footer /> 
     </>
   )
 }
 
+function MainPortion(){
+  return(
+    <>
+      <article className="landing-hero-item main-portion">
+        {/* <div className="landing-hero-bg"
+          style={{
+            position: "absolute",
+            zIndex: 1,
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <img src={landscapeImage2} alt="Background image" className="landing-hero-main-portion-bg" 
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              filter: "blur(6px)",
+            }}
+          />
+        </div>        
+         */}
+        <div
+          className="landing-hero-title"
+          style={{
+            // display: "none",
+            width: "100%",
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "flex-end",
+            fontWeight: 600,
+            fontSize: "1rem",
+            letterSpacing: "0.2rem",
+          }} 
+        >
+          <h2 style={{ display: "none", }}> ZEMACU </h2>
+          {/* <div className="landing-hero-title-line"
+            style={{
+              height: "3px",
+              width: "100%",
+              backgroundColor: "black",
+            }}
+          /> */}
+        </div>
+        
+        <div className="landing-hero-text-content"> 
+          <h1 className="landing-hero-heading"> WELCOME TO ZEMACU <br /> WHERE <br /> <span>ANYBODY IS SOMEBODY </span> </h1>
+          <p className="landing-hero-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ea, soluta nihil perferendis, est iste ipsa obcaecati eos quas officiis, incidunt temporibus. Iste deleniti repellendus</p>
+        </div>
+        
+        <div className="landing-hero-btn-container">
+          <motion.button 
+            whileHover={{scale: 1.1}}
+            whileTap={{scale: 0.9}}
+            onClick={() => (modalOpen ? close() : open())}
+            className="landing-hero-button"        
+          >
+            REGISTER
+          </motion.button>
+
+          <AnimatePresence
+            // Disabling any initial animations on children that
+            // are present when the component is first rendered
+            initial={false}
+            // Only render one component at a time
+            // The exiting component will finish its exit
+            // animation before entering component is rendered
+            exitBeforeEnter={true}
+            // fires when all exiting nodes have completed animating out
+            onExitComplete={() => null}
+          >
+            {modalOpen && 
+              <Modal
+                modalOpen={modalOpen}
+                handleClose={close} 
+                content={"Hello there Nerd"}
+              />
+            }            
+          </AnimatePresence>
+        </div>
+      
+      </article>      
+    </>
+  )
+}
+
+function ImageSlider({ orientation, image }) {
+  return(
+    <div className={`landing-hero-item image-slider ${orientation}`}>
+      {/* {orientation} Image Slider. */}
+      <img src={image} alt="Slider Image" />
+    </div>
+  )
+}
+
+function Stats(){
+  return(
+    <div className="landing-hero-item stats">
+      {/* TODO: IMPLEMENT THE TAPE .... COMPONENT  */}
+      <h2> 100+ <span> MEMBERS </span> <br /> 500+ <span> SOULS WON</span></h2>
+    </div>
+  )
+}
+
+const Testimonial = React.memo(function Testimonial({ testimonialImage, testimonialName, testimonialText, 'aria-hidden': ariaHidden }){
+  return(
+    <div className="landing-testimonial-container" aria-hidden={ariaHidden}>
+      <div className="landing-testimonial-contact"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          gap: "1rem",
+        }}
+      >
+        <div className="landing-testimonial-img-container">
+           <img src={testimonialImage} alt="testimonial image" className="landing-testimonial-img" 
+             style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              aspectRatio: "1/1", // Keeps it a square and prevents reflow
+              borderRadius: "50%",
+              flexShrink: 0,
+             }}
+           />
+        </div>
+        <p className="landing-testimonial-name"> {testimonialName} </p>
+      </div>
+      
+      <div className="landing-testimonial-text">
+        { testimonialText } 
+      </div>
+    </div>
+  )
+})
+
+function Testimonials() {
+  // const doubled = [...testimonials, ...testimonials];
+  return(
+    <div className="landing-hero-item testimonial-slider">
+      <div className="slider__inner">
+        {/* {doubled.map((t, idx) => (
+              <Testimonial 
+              key={`${t.id}-${idx}`} // A unique key per rendered element
+              testimonialName={t.name}
+              testimonialImage={t.image}
+              testimonialText={t.text}
+              aria-hidden={idx >= testimonials.length} // Hide duplicates from screen readers
+              />
+          ))} */}
+
+          {testimonials.map((testimonial) => {
+              return(
+                <Testimonial 
+                key={testimonial.id}
+                testimonialName={testimonial.name}
+                testimonialImage={testimonial.image}
+                testimonialText={testimonial.text}
+                />
+              )
+            })         
+          }
+          {testimonials.map((testimonial) => {
+              return(
+                <Testimonial 
+                key={testimonial.id + 5}
+                testimonialName={testimonial.name}
+                testimonialImage={testimonial.image}
+                testimonialText={testimonial.text}
+                />
+              )
+            })         
+          }
+      </div>  
+    </div>
+  )
+}
+
+
+// More Robust approach to figuring out the width of each of the testimonials
+// import { useRef, useEffect } from "react";
+
+// function Testimonials(){
+//   const sliderEl = useRef(null);
+
+//   useEffect(() => {
+//     const el = sliderEl.current;
+//     if (!el) return;
+//     const scroller = el.closest('.testimonial-slider') || el;
+//     const scrollerWidth = scroller.clientWidth || 0;
+//     // e.g. each card = 80% of the scroller's width (or whatever ratio you want)
+//     const cardWidth = Math.round(scrollerWidth * 0.8);
+//     el.style.setProperty('--card-width', `${cardWidth}px`);
+//     // optional: watch resize if you want fully responsive
+//     const onResize = () => {
+//       const w = scroller.clientWidth || 0;
+//       el.style.setProperty('--card-width', `${Math.round(w * 0.8)}px`);
+//     };
+//     window.addEventListener('resize', onResize);
+//     return () => window.removeEventListener('resize', onResize);
+//   }, []);
+
+//   return (
+//     <div className="landing-hero-item testimonial-slider">
+//       <div className="slider__inner" ref={sliderEl} style={{ "--_animation-duration": "30s" }}>
+//         {/* doubled mapping here */}
+//       </div>
+//     </div>
+//   );
+// }
+
+// in CSS:
+
+// .landing-testimonial-container {
+//   flex: 0 0 auto;
+//   width: var(--card-width); /* computed from the scroller width */
+// }
+
+// Note: this ensures original and duplicate use the same widths because they both read the same CSS var from the same parent container.

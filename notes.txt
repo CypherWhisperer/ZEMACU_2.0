@@ -1,5 +1,109 @@
 ----------------------------------------------------------------------------------------------------
 -------------------------------------------  TODO  -------------------------------------------------
+ACTUAL DATA: {
+    - Landing :{
+        - Hero Text
+        - testimonials: {
+            - actual photoes, true testimony 
+        } 
+    }
+    - Footer {
+        - secretary email, and whatsapp
+        - ZEMACU: {
+            - youtube
+            - Facebook
+            - Instagram
+            - TikTok
+        }
+        - Developers: {
+            - gmail
+            - whatsapp
+            - x
+            - Instagram
+            - LinkedIn
+            - Github
+        }
+    }
+    - Weekly: {
+        - Actual relevant text content for each day
+    }
+    - Leaders: {
+        - social handles: {
+            - Facebook
+            - Instagram 
+            - threads
+            - X 
+        }
+    }
+    - Support: {
+        - General and Project support text
+        - Pochi la Biashara number 
+    }
+
+    - Resources: {
+        - Ensure downloadables are Downloadable
+    }
+
+    - Modal - Incorporating the forms
+}
+
+NOW: {
+    - Landing {
+        - the Content at the header main portion 
+        - The testimonials {
+            - create a component for each testimonial and have multiple instances
+            - Bring in a slider component npm store and have it there for now 
+            - consult the AI to: 
+              - See if we can identify the problem
+              - incorporate the JS and hence a fully functional and independent React component 
+              - Turn it into a reusable component that takes in the children (or an array of so )
+        }
+        - Modal component to Handle alerts( wait could console.alert() help us ? )
+    }
+
+    - SUPPORT {
+        button event to scroll to the payment-section section 
+    }
+}
+
+- INCORPORATING THE UE OF ICON AS A COMPONENT
+- CREATING THE IMAGE SLIDER COMPONENT - e.g use in landing carousels
+- NUMBERS ODOMETER EFFECT COMPONENT
+
+- Get actual data to some of the links from leaders and other developers
+- Self-Hosting fonts 
+- Weekly activity descriptions 
+- Modal incorporation - the actual input thingies 
+- Support page general support 
+
+- Make an Image slider component from the leaders page slider (single source of truth): {
+    - PROPS:
+       - An Array of content (e.g images); not sure for the case of leaders page (either leave as is, or incorporate the component with, say `children`)
+       - Probably a boolean value to 'toggle' stuff like dragging, the dots, 
+}
+
+- 'Point' all Home to Landing, as we work on the Home later ... (Nav, React Router )
+- Re-Learn returning JSX - refactor to use of svgs instead of images
+- MODAL COMPONENT NEEDED FOR ALARTS (e.g Sorry, Page/ Feature currenlty under development)
+   - props: {
+      - Message / content (If we can return JSX, can we also pass it in as a component -oh, children ?)
+      - 
+   }
+
+HOME/LANDING: {
+    - OPTIMIZING THE IMAGES .....
+    - What's important to the user:
+       - registration  ( a recommended user )
+       - who are we     ( curious user + general )
+       - credibility and trust  ( General )
+       - Niche: ( fellow Christian organizations/ institutional groups)
+           - Soul Winning (tape... thingy)
+           - Members
+           - 
+       
+       - Activities 
+       - People - they say images and videos speek munch than words
+}
 
 - General: {
     - General coherence in styling
@@ -40,6 +144,10 @@ Leaders Page 2: {
 
 ----------------------------------------------------------------------------------------------------
 ------------------------------------------- ISSUES -------------------------------------------------
+Nav: {
+    - The font colors broke, no Idea of the cause ...
+}
+
 Leaders Page 3: {
     - The cursor:active thingy doesn't reset after the first grap - it maintains that state 'grabbing' after the first instance
 }
@@ -71,6 +179,11 @@ LOGOS:{
 Nav: {
     - implement the expand-on-hover functionality
     - Sync the expand animations on mobile - they look a bit ugly when toggling the bar
+}
+
+Leaders Page 3: {
+    - a pointer event on the main/leader image on smaller devices to trigger a modal for the full image 
+
 }
 
 Leaders Page 2 {

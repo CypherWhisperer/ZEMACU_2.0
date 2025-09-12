@@ -26,7 +26,7 @@ export default function App() {
       <main className="page-content" role="main">
         <Routes>
           <Route path="/" element={<Landing />} /> 
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<Landing  />} />
           <Route path="/leaders" element={<Leaders />} />
           <Route path="/weekly" element={<Weekly />} />
           <Route path="/resources" element={<Resources />} />

@@ -15,6 +15,7 @@ if (slides.length > 0) {
   }, 5000);
 }
 
+
 // Previous Slideshow functionality
 //  const slides = document.querySelectorAll('.slide');
 //  if (slides.length > 0) {

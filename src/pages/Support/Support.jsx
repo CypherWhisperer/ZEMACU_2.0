@@ -4,6 +4,13 @@ import './Support.css'
 import { Footer } from '../../components/components.js'
 
 export default function Support(){
+
+  const scrollToView = () => {
+    document.getElementById('payment-section').scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
   return(
     <>
       <main id="supportMainContainer" className="support-container">
@@ -21,7 +28,7 @@ export default function Support(){
               life's challenges with faith and hope.
             </p>
             <button className="cta-button" onclick="handleGeneralSupport()">
-              <span>Get Support</span>
+              <span>Support Us</span>
               <svg className="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>

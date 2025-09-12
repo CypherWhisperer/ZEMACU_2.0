@@ -1,3 +1,8 @@
+.container {
+  background-color: #373539;
+  color: #000;
+}
+
 /* Gallery Section */
 .gallery-grid {
   display: grid;

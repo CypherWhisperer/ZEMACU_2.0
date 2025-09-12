@@ -1,0 +1,115 @@
+.scroller {
+    --gap: 1rem;
+    width: 50%;
+    max-width: 50%;
+    height: 30%;
+    overflow: hidden;
+
+    /* See that  white over there, yeah it can be any color as long as it is opaque (no alpha value)  */
+    mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+    );
+    /* Outoprefixer and Post CSS can have you get away with just one - without the webkit version  */
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    
+    border: 2px solid red;
+}
+
+.testimonials-slider.scroller__inner {
+    /* max-content also does the trick  */
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap);
+    /* padding-block: 1rem; */
+
+    animation:
+      /* the animation identifier   */
+      scroll
+      /* A long period so that each element gets sufficient screen time  */
+      var(--_animation-duration, 60s)
+      /* Setting the animation direction  */
+      var(--_animation-direction, forwards)
+      /* linear animation so that the speed will always be constant */
+      linear
+      /* Infinite to have the animation reset when it gets to the end of the scroller  */
+      infinite;
+}
+
+.scroller[data-direction="right"] .scroller__inner {
+    --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] .scroller__inner {
+    --_animation-direction: forwards;
+}
+
+ /* Though in the final thing this will be a number representing actual duration in seconds for fine tuning  */
+.scroller[data-speed="slow"] .scroller__inner {
+    --_animation-duration: 60s;
+}
+
+.scroller[data-speed="fast"] .scroller__inner {
+    --_animation-duration: 40s;
+}
+
+@keyframes scroll {
+    to {
+        /* compensating for the gap by subtracting it from the translate percentage 
+         * Without it we'd have a weird jump when  we get to the end of the inner scroller 
+        */
+        transform: translate(calc(-50% - calc(var(--gap) / 2)));
+    }
+}
+
+ /* Checking for scroller classes with the data attribute of data-animated set to true  */
+/* .scroller[data-animated=true] {
+    overflow-hidden
+}
+
+.scroller[data-animated=true] .scroller__inner {
+    /* The idea was to have the items wrap if the user has prefers-reduced-motion set  */
+    /* and set it to nowrap if otherwise But for us that cannot Apply due to the space we have  */
+    /* flex-wrap: nowrap; */
+/* } */
+
+.testimonial-container {
+    flex-shrink: 0;
+    flex-grow: 0;
+    /* Is there a way to calculate the width of this based on its ancestor and set it to 80%
+    (scroller, not scroller__iner since it has a width of fit-content) 
+    * Or perhaps calculating the width of every item based on the number of items 
+    * (i.e with the inner slider set to fit-content, we can fet that dynamic width and divide it 
+    * by the number of items such that each item get's uniform width. But is that what we are after though ?
+    *   
+    */
+    width: 27rem;
+    height: 95%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 0.7rem;
+    background-color: #080708;
+}
+
+.testimonial-contact {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.testimonial-img-container {
+    width: 8rem;
+    height: 8rem;
+}
+
+.testimonial-text {
+    flex: 1;
+    padding: 1rem;
+}

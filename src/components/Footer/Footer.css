@@ -2,9 +2,9 @@
 
 :root {
   --main_purple_color: #a117a4;
-  --primary_color: #c5c6c8;
-  --secondary_color: #0d0e10;  
-  --accent_color: #282728;
+  --footer_primary_color: #c5c6c8;
+  --footer_secondary_color: #0d0e10;  
+  --footer_accent_color: #282728;
 }
 
 * {
@@ -21,7 +21,7 @@
   justify-content: flex-start;
   width: 100%;
   overflow: hidden;
-  background-color: var(--primary_color);
+  background-color: var(--footer_primary_color);
 }
 
 .main-container h1 {
@@ -29,7 +29,7 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: var(--secondary_color);
+  color: var(--footer_secondary_color);
 }
 
 /* ====================== UPPER CONTAINER ======================= */
@@ -42,7 +42,7 @@
 }
 
 .main-container h3 {
-  color: var(--accent_color);
+  color: var(--footer_accent_color);
 }
 
 .main-container .upper-container {
@@ -67,6 +67,8 @@
   flex-direction: column;
   align-items: center;
   margin-left: 2rem;
+  /* color: var(--main_purple_color); */
+  color: #731382;
 }
 
 .main-container .upper-container .logo-container .logo-image {
@@ -145,7 +147,7 @@
   height: 2px;
   background: linear-gradient(to right,
       transparent,
-      var(--accent_color),
+      var(--footer_accent_color),
       transparent);
   margin: 2rem 0;
 }

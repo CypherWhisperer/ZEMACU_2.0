@@ -1,123 +1,453 @@
-/* ====================== SLIDER STYLING ======================= */
-
-.slideshow-container {
-  max-width: 100%;
-  margin: 0 auto 2rem;
-  position: relative;
-  overflow: hidden;
-  z-index: 20;
-  border: 0px solid rgb(139, 12, 118);
-  min-height: 50vh;
+.landing-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #242424;
 }
 
-.slideshow-container .slide {
-  width: 100%;
-  height: 50vh;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  transition: transform 1.5s ease-in-out;
-  opacity: 1;
+.landing-container .hero-section {
+    width: 100%;
+    max-width: 1450px;
+    height: 100%;
+    padding: 0.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 5rem);
+    grid-template-areas: 
+      "item1   item1   item1   item1   item1   item1   item1   item2   item2   item2   item2   item2"
+      "item1   item1   item1   item1   item1   item1   item1   item2   item2   item2   item2   item2"
+      "item1   item1   item1   item1   item1   item1   item1   item2   item2   item2   item2   item2"
+      "item1   item1   item1   item1   item1   item1   item1   item2   item2   item2   item2   item2"
+      "item1   item1   item1   item1   item1   item1   item1   item3   item3   item4   item4   item4"
+      "item1   item1   item1   item1   item1   item1   item1   item3   item3   item4   item4   item4"
+      "item5   item5   item5   item5   item5   item5   item7   item7   item7   item4   item4   item4"
+      "item6   item6   item6   item6   item6   item6   item7   item7   item7   item4   item4   item4"
+      "item6   item6   item6   item6   item6   item6   item8   item8   item8   item4   item4   item4"
+      "item6   item6   item6   item6   item6   item6   item8   item8   item8   item4   item4   item4";
+    gap: 0.5rem;
 }
 
-.slideshow-container .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: block;
+.landing-container .hero-section .landing-hero-item {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.slideshow-container .slide iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: block;
+.landing-container .hero-section .landing-hero-item.main-portion {
+    grid-area: item1;
+    /* position: relative; */
+    flex-direction: column;
+    gap: 0.4rem;
+
+    padding: 0.3rem;
+    overflow: hidden;
 }
 
-/* ==================   TESTIMONIAL SECTION STYLING    =============== */
-/* -------------------------- Testimonial Section ------------------------------- */
-
-.testimonials-section {
-  padding: 2rem 0;
-  background-color: #f5f5f5;
-  text-align: center;
+.landing-container .hero-section .landing-hero-item.main-portion div.landing-hero-text-content {
+    flex: 1;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.3;
+    /* padding: 05rem; */
+    color: #f0f0f0;
 }
 
-.testimonials-section .testimonials-container {
-  max-width: 100%;
-  margin: 0 auto;
-  min-height: 150px;
+.landing-container .hero-section .landing-hero-item.main-portion h1.landing-hero-heading {
+   font-size: 3rem;
+   font-weight: 700;   
 }
 
-.testimonials-section .testimonials-container .testimonial-item {
-  min-height: 120px;
-  margin-bottom: 1rem;
-  color: #555;
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
-  display: none;
-  animation: verseFade 15s infinite;
+.landing-container .hero-section .landing-hero-item.main-portion h1.landing-hero-heading span {
+    color: var(--primary_purple_color);
 }
 
-.testimonials-section .testimonials-container .testimonial-item.active {
-  display: block;
+.landing-container .hero-section .landing-hero-item.main-portion p.landing-hero-text {
+    font-size: 1.2rem;
+    padding: 0.3rem 0;
 }
 
-.testimonials-section .testimonials-container .testimonial-item .testimonial-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 1rem;
-  vertical-align: middle;
+.landing-container .hero-section .landing-hero-item.main-portion .landing-hero-btn-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    z-index: 2;
 }
 
-.testimonials-section .testimonials-container .testimonial-item .testimonial-text {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
+.landing-container .hero-section .landing-hero-item.main-portion .landing-hero-btn-container > button {
+    border: none;
+    width: 12rem;
+    height: 4rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    color: #FFF;
+    background-color: var(--primary_purple_color);
 }
 
-/* --- Borrowed From Home Page  ---*/
-@keyframes verseFade {
-
-  0%,
-  100% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  10%,
-  90% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.landing-container .hero-section .landing-hero-item.image-slider.landscape {
+    grid-area: item2;
+    background-color: yellow;    
 }
 
-@media (max-width: 768px) {
+.landing-container .hero-section .landing-hero-item.image-slider > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
 
-  .container {
-    padding: 1rem;
-    max-width: 100%;
-  }
 
-  .testimonials-container {
-    min-height: 120px;
-  }
+.landing-container .hero-section .landing-hero-item.stats{
+    grid-area: item3;
+    background-color: #c5c6c8;
+    font-size: 1.5rem; 
+}
 
-  .testimonial-item {
-    font-size: 0.9rem;
-  }
+.landing-container .hero-section .landing-hero-item.stats span {
+    font-size: 1rem;
+}
 
-  .slideshow-container {
-    min-height: 30vh;
-  }
+.landing-container .hero-section .landing-hero-item.image-slider.portrait {
+    grid-area: item4;
+    background-color: purple;
 
-  .slide {
-    height: 30vh;
-  }
+}
+
+ /* ========================= TESTIMONIAL SECTION ======================= */
+.landing-container .hero-section .landing-hero-item.testimonial-heading {
+    grid-area: item5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #101825;
+    color: #c5c6c8;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+ .landing-container .hero-section .landing-hero-item.testimonial-slider {
+    --slider_bg: #101825;
+    --testimonial_bg: #1a223a;
+    --testimonial_text_color: #FAFCFE;
+    color: var(--testimonial_text_color);
+    grid-area: item6;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    background-color: var(--slider_bg);
+
+    mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+    );
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.landing-container .hero-section .landing-hero-item.testimonial-slider > .slider__inner {
+    --gap: 1rem;
+    width: max-content;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--gap);
+    animation: scroll 30s forwards linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* compensating for the gap by subtracting it from the translate percentage 
+         * Without it we'd have a weird jump when  we get to the end of the inner scroller 
+        */
+        transform: translateX(calc(-50% - (var(--gap) / 2)));
+        /* transform: translateX(-50%); */
+    }
+}
+
+.landing-container .hero-section .landing-hero-item.testimonial-slider > .slider__inner:hover {
+    animation-play-state: paused;
+}
+
+.landing-container .hero-section .landing-hero-item.testimonial-slider .landing-testimonial-container {
+   /* width: 20%; */
+   /* flex: 0 0 80%; */
+   max-width: 29rem;
+   width: 27rem;
+   min-width: 16rem;
+   /* width: 30rem;   fixed width -> deterministic */
+  /* or use clamp() to be responsive: */
+  /* width: clamp(16rem, 20vw, 28rem); */
+   height: 90%;
+   flex-shrink: 0;
+   flex-grow: 0;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: 0.3rem;
+   border-radius: 0.7rem;
+   overflow: hidden;
+   background-color: var(--testimonial_bg);
+   /* border: 1px solid black; */
+}
+
+.landing-container .hero-section .landing-hero-item.testimonial-slider .landing-testimonial-container .landing-testimonial-contact {
+    margin: 0.5rem 1rem;
+}
+
+.landing-container .hero-section .landing-hero-item.testimonial-slider .landing-testimonial-container .landing-testimonial-contact .landing-testimonial-img-container {
+    width: 6rem;
+    height: 6rem;
+}
+
+.landing-container .hero-section .landing-hero-item.testimonial-slider .landing-testimonial-container .landing-testimonial-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem;
+    /* border: 1px solid white; */
+}
+
+.landing-container .hero-section .landing-hero-item.button1 {
+    grid-area: item7;
+    border: none;
+    color: #c5c6c8;
+    font-size: 2rem;
+    font-weight: 600;
+
+    background-color: var(--primary_purple_color);
+}
+
+.landing-container .hero-section .landing-hero-item.button2 {
+    grid-area: item8;
+    border: none;
+    gap: 1rem;
+    font-size: 2rem;
+    color: #FFF; 
+
+    background-color: green;
+}
+
+.landing-container .hero-section .landing-hero-item.button2 svg {
+    transform: scale(2);
+}
+
+
+/* =================== NOT SURE IF THIS IS RELVANT ======================= */
+@media screen and (max-width: 1024px) {
+    .landing-container .hero-section {
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: repeat(13, 6rem);
+        grid-template-areas: 
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"        
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item3   item3   item3   item2   item2   item2   item2   item2"
+          "item3   item3   item3   item2   item2   item2   item2   item2"
+          "item4   item4   item4   item2   item2   item2   item2   item2"
+          "item4   item4   item4   item5   item5   item5   item5   item5"
+          "item4   item4   item4   item6   item6   item6   item6   item6"
+          "item4   item4   item4   item6   item6   item6   item6   item6"
+          "item4   item4   item4   item6   item6   item6   item6   item6"
+          "item7   item7   item7   item7   item8   item8   item8   item8";
+    }
+}
+/* ======================================================================= */
+
+@media screen and (max-width: 768px) {
+    .landing-container .hero-section {
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: repeat(14, 4rem);
+        grid-template-areas: 
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"        
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item3   item3   item3   item2   item2   item2   item2   item2"
+          "item3   item3   item3   item2   item2   item2   item2   item2"
+          "item4   item4   item4   item2   item2   item2   item2   item2"
+          "item4   item4   item4   item2   item2   item2   item2   item2"
+          "item4   item4   item4   item5   item5   item5   item5   item5"
+          "item4   item4   item4   item6   item6   item6   item6   item6"
+          "item4   item4   item4   item6   item6   item6   item6   item6"
+          "item4   item4   item4   item6   item6   item6   item6   item6"
+          "item7   item7   item7   item7   item8   item8   item8   item8";
+    }
+
+    .landing-container .hero-section .landing-hero-item.main-portion div.landing-hero-text-content {
+        line-height: 1.2;
+    }
+
+    .landing-container .hero-section .landing-hero-item.main-portion p.landing-hero-text {
+        font-size: 1.1rem;
+    }
+
+    .landing-container .hero-section .landing-hero-item.main-portion .landing-hero-btn-container > button {
+        width: 10.5rem;
+        height: 3.5rem;
+        letter-spacing: 0;
+    }
+
+    .landing-container .hero-section .landing-hero-item.testimonial-slider .landing-testimonial-container {
+        width: 22rem;
+    }
+
+
+    .landing-container .hero-section .landing-hero-item.testimonial-slider .landing-testimonial-container .landing-testimonial-contact {
+        margin: 0.3rem 0.8rem;
+    }
+
+    .landing-container .hero-section .landing-hero-item.testimonial-slider .landing-testimonial-container .landing-testimonial-contact .landing-testimonial-img-container {
+        width: 4.4rem;
+        height: 4.4rem;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .landing-container .hero-section {
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: repeat(21, 5rem);
+        grid-template-areas: 
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item2   item2   item2   item2   item2   item2   item2   item2"
+          "item2   item2   item2   item2   item2   item2   item2   item2"
+          "item2   item2   item2   item2   item2   item2   item2   item2"
+          "item3   item3   item3   item7   item7   item7   item7   item7"
+          "item3   item3   item3   item8   item8   item8   item8   item8"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item5   item5   item5   item5   item5   item5   item5   item5"
+          "item6   item6   item6   item6   item6   item6   item6   item6"
+          "item6   item6   item6   item6   item6   item6   item6   item6"
+          "item6   item6   item6   item6   item6   item6   item6   item6"
+          ;
+    }
+
+    /* .landing-container .hero-section .landing-hero-item.image-slider.portrait {
+        display: none;
+    } */
+
+    .landing-container .hero-section .landing-hero-item.main-portion h1.landing-hero-heading {
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
+
+    .landing-container .hero-section .landing-hero-item.testimonial-heading {
+        font-size: 1rem;
+    }
+
+
+    .landing-container .hero-section .landing-hero-item.main-portion .landing-hero-btn-container > button {    
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .landing-container .hero-section .landing-hero-item.stats {
+        font-size: 1rem;
+    }
+
+    .landing-container .hero-section .landing-hero-item.stats span {
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .landing-container .hero-section {
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: repeat(21, 4rem);
+        grid-template-areas: 
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item1   item1   item1   item1   item1   item1   item1   item1"
+          "item2   item2   item2   item2   item2   item2   item2   item2"
+          "item2   item2   item2   item2   item2   item2   item2   item2"
+          "item2   item2   item2   item2   item2   item2   item2   item2"
+          "item3   item3   item3   item7   item7   item7   item7   item7"
+          "item3   item3   item3   item8   item8   item8   item8   item8"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item4   item4   item4   item4   item4   item4   item4   item4"
+          "item5   item5   item5   item5   item5   item5   item5   item5"
+          "item6   item6   item6   item6   item6   item6   item6   item6"
+          "item6   item6   item6   item6   item6   item6   item6   item6"
+          "item6   item6   item6   item6   item6   item6   item6   item6"
+          ;
+    }
+
+    .landing-container .hero-section .landing-hero-item.testimonial-slider .landing-testimonial-container .landing-testimonial-contact .landing-testimonial-img-container {
+        width: 4.2rem;
+        height: 4.2rem;
+    }
+    
+
+    .landing-container .hero-section .landing-hero-item.main-portion h1.landing-hero-heading {
+        font-size: 1.9rem;
+        line-height: 1.3;
+    }
+
+    .landing-container .hero-section .landing-hero-item.testimonial-slider .landing-testimonial-container {
+        width: 18rem;
+    }
+
+    .landing-container .hero-section .landing-hero-item.testimonial-slider .landing-testimonial-container .landing-testimonial-contact {
+        gap: 1rem;
+    }
+
+
+    .landing-container .hero-section .landing-hero-item.stats {
+        font-size: 0.8rem;
+    }
+
+    .landing-container .hero-section .landing-hero-item.stats span {
+        font-size: 0.5rem;
+    }
+
+    .landing-container .hero-section .landing-hero-item.button1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .landing-container .hero-section .landing-hero-item.testimonial-heading {
+        font-size: 0.8rem;
+    }
 }
