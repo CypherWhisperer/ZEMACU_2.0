@@ -4,7 +4,7 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/ZEMACU/",
+  base: "/ZEMACU_2.0/",
   plugins: [
     react(),
     //svgr(), // Need this to import svgs as JSX, and not as images - more flexible

@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename='/ZEMACU'>
+  <BrowserRouter basename='/ZEMACU_2.0'>
     <App />
   </BrowserRouter>
 )
