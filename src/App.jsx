@@ -25,12 +25,12 @@ export default function App() {
       <Nav expanded={expanded} toggle={() => setExpanded(e => !e)}/>
       <main className="page-content" role="main">
         <Routes>
-          <Route path="/" element={<Landing />} /> 
-          <Route path="/home" element={<Landing  />} />
-          <Route path="/leaders" element={<Leaders />} />
-          <Route path="/weekly" element={<Weekly />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/support" element={<Support />} />
+          <Route path="/ZEMACU/" element={<Landing />} /> 
+          <Route path="/ZEMACU/home" element={<Landing  />} />
+          <Route path="/ZEMACU/leaders" element={<Leaders />} />
+          <Route path="/ZEMACU/weekly" element={<Weekly />} />
+          <Route path="/ZEMACU/resources" element={<Resources />} />
+          <Route path="/ZEMACU/support" element={<Support />} />
         </Routes>
       </main>
     </div>

@@ -7,10 +7,30 @@ import { Footer, WhatsAppButton, Modal } from '../../components/components.js'
 // Assets
 import { leadersData, testimonials, landscapeImage1, landscapeImage2, portraitImage1 } from '../../assets/assets.js'
 
-// GLOBAL PIECES OF STATE
-const [modalOpen, setModalOpen] = useState(false)
-const open = () => setModalOpen(true)
-const close = () => setModalOpen(false)
+
+// Function to handle launching a modal
+// Could take in inputs such as:
+//   - the actual content to render on the modal
+//   - Typically the props to the modal
+// We could then have it as the event triggered by the buttons.
+// const launchModal = ({content}) => {
+//   return(
+//     <AnimatePresence
+//       initial={false}
+//       exitBeforeEnter={true}
+//       onExitComplete={() => null}
+//     >
+//        {modalOpen && 
+//           <Modal
+//             modalOpen={modalOpen}
+//             handleClose={close} 
+//             content={content}
+//           />
+//         }            
+//     </AnimatePresence>
+//   )
+// }
+
 
 // Functional Components
 export default function Landing(){
@@ -31,7 +51,7 @@ export default function Landing(){
                </span>
             </div>
             <Testimonials />
-            <button className="landing-hero-item button1"> View Gallery </button>
+            <button className="landing-hero-item button1" > View Gallery </button>
             <WhatsAppButton 
               btnClassName={"landing-hero-item button2"}
               btnText={"Chat"}
@@ -47,6 +67,10 @@ export default function Landing(){
 }
 
 function MainPortion(){
+  const [modalOpen, setModalOpen] = useState(false)
+  const open = () => setModalOpen(true)
+  const close = () => setModalOpen(false)
+
   return(
     <>
       <article className="landing-hero-item main-portion">
