@@ -347,7 +347,7 @@ a.sidebar-link:hover,
   position: relative;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
-
+ 
 /* Close button */
 .modal-content .close-btn {
   /*position: absolute*/

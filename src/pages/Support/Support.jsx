@@ -16,16 +16,15 @@ export default function Support(){
       <main id="supportMainContainer" className="support-container">
         {/* General Support Section */}
         <section className="section-title">
-          <h1 className="title-text">GENERAL SUPPORT</h1>
+          <h1 className="title-text">Partner With Us in Faith</h1>
           <div className="title-line" />
         </section>
         <div className="content-grid">
           <div className="content-card">
-            <h2 className="card-title">Community Assistance</h2>
+            <h2 className="card-title">Sustaining Our Ministry</h2>
             <p className="card-description">
-              We provide comprehensive support to our community members through various programs,
-              counseling services, and spiritual guidance. Our team is here to help you navigate
-              life's challenges with faith and hope.
+              Help us maintain the heartbeat of our Christian Union as we gather, grow, and serve together. Your general support covers the essential foundations that make our weekly activities possible: from venue costs and study materials to hospitality and outreach efforts.
+              <br/> <br/> When you contribute to our general fund, you're investing in every aspect of our ministry - the quiet moments of prayer devotion, the joyful sounds of praise practice, the deep discussions in Bible study, the creative expressions of faith, and the powerful messages from visiting ministers. Your support ensures that our doors remain open and our programs continue to thrive, creating space where lives are transformed and community is built.
             </p>
             <button className="cta-button" onclick="handleGeneralSupport()">
               <span>Support Us</span>
@@ -52,11 +51,10 @@ export default function Support(){
             </div>
           </div>
           <div className="content-card">
-            <h2 className="card-title">Ministry Projects</h2>
+            <h2 className="card-title">Media Ministry Project</h2>
             <p className="card-description">
-              Support our ongoing ministry projects that make a real difference in our community.
-              From youth programs to outreach initiatives, your contribution helps us expand
-              our impact and serve more people.
+              We have a vision to amplify God's message through modern technology and professional-quality media instruments. This specialized project aims to equip our ministry with the tools needed to record, stream, and share our worship, teaching, and testimonies with a broader audience.
+              <br/> <br/>Your contribution to our Media Ministry Project will help us acquire essential equipment including audio recording systems, cameras, lighting, and broadcasting tools. This investment extends our reach beyond our physical gathering space, allowing us to touch hearts across digital platforms, preserve powerful moments of ministry, and create resources that can bless others long after the service ends.
             </p>
             <button className="cta-button" onclick="handleProjectSupport()">
               <span>Support Projects</span>

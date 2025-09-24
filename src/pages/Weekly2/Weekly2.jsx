@@ -12,11 +12,11 @@ export default function Weekly2(){
 
     //TODO: There must be a dynamic way of fetching the coordinator data from /src/assets/data/leaders.js. Find it
     const cardsArray = [
-        {id: 1, dayLetter: "M", image: { src: monImage, alt: "day Image"}, activity: { name: "PRAISE & WORSHIP PRACTISE",        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptatem, assumenda nisi accusantium odit totam eligendi exercitationem officia a distinctio, nulla debitis, nihil excepturi dicta cum maxime cupiditate earum quo?", coordinator: { name: "Margaret",         phone: "254745208720"}, }, title: "Monday"},
-        {id: 2, dayLetter: "T", image: { src: tueImage, alt: "day Image"}, activity: { name: "BIBLE STUDY",                description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptatem, assumenda nisi accusantium odit totam eligendi exercitationem officia a distinctio, nulla debitis, nihil excepturi dicta cum maxime cupiditate earum quo?", coordinator: { name: "Christine Murugi", phone: "254790306571"}, }, title: "Tuesday"},
-        {id: 3, dayLetter: "W", image: { src: wedImage, alt: "day Image"}, activity: { name: "PRAYER & DEVOTION",                description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptatem, assumenda nisi accusantium odit totam eligendi exercitationem officia a distinctio, nulla debitis, nihil excepturi dicta cum maxime cupiditate earum quo?", coordinator: { name: "Gideon Moikan",    phone: "254112388656"}, }, title: "Wednesday"},
-        {id: 4, dayLetter: "T", image: { src: thurImage, alt: "day Image"},activity: { name: "DISCIPLESHIP & CREATIVE MINISTRY", description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptatem, assumenda nisi accusantium odit totam eligendi exercitationem officia a distinctio, nulla debitis, nihil excepturi dicta cum maxime cupiditate earum quo?", coordinator: { name: "Ann Michael",      phone: "254748736006"}, }, title: "Thursday"},
-        {id: 5, dayLetter: "F", image: { src: friImage, alt: "day Image"}, activity: { name: "SERVICE MINISTRY",                 description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptatem, assumenda nisi accusantium odit totam eligendi exercitationem officia a distinctio, nulla debitis, nihil excepturi dicta cum maxime cupiditate earum quo?", coordinator: { name: "Meshack Abwolo",   phone: "254748390059"}, }, title: "Friday"},
+        {id: 1, dayLetter: "M", image: { src: monImage, alt: "day Image"}, activity: { name: "PRAISE & WORSHIP PRACTISE",        description: "Let your voice rise in joyful celebration as we prepare our hearts and harmonies for worship. Whether you're a seasoned musician or just love to sing, come experience the power of collective praise as we rehearse songs that will lift spirits and honor God.",                                 coordinator: { name: "Margaret",         phone: "254745208720"}, location: "Seminar Room 3", time: "4:30 -6:00 PM, EAT", }, title: "Monday"},
+        {id: 2, dayLetter: "T", image: { src: tueImage, alt: "day Image"}, activity: { name: "BIBLE STUDY",                      description: "Dive deep into Scripture as we explore God's Word together. Through thoughtful discussion and shared insights, we uncover timeless truths that speak into our daily lives. Bring your questions, your curiosity, and an open heart ready to be transformed by divine wisdom.",                     coordinator: { name: "Christine Murugi", phone: "254790306571"}, location: "Seminar Room 3", time: "4:30 -6:00 PM, EAT", }, title: "Tuesday"},
+        {id: 3, dayLetter: "W", image: { src: wedImage, alt: "day Image"}, activity: { name: "PRAYER & DEVOTION",                description: "Find peace in the presence of the Almighty as we gather for focused prayer and reflection. This sacred time allows us to bring our burdens, gratitude, and intercessions before God, strengthening our spiritual foundation for the week ahead",                                                   coordinator: { name: "Gideon Moikan",    phone: "254112388656"}, location: "Seminar Room 3", time: "4:30 -6:00 PM, EAT", }, title: "Wednesday"},
+        {id: 4, dayLetter: "T", image: { src: thurImage, alt: "day Image"},activity: { name: "DISCIPLESHIP & CREATIVE MINISTRY", description: "Grow in your faith journey while expressing your God-given creativity. From mentorship opportunities to artistic expressions of worship, discover how your unique gifts can serve the kingdom and inspire others in their walk with Christ.",                                                      coordinator: { name: "Ann Michael",      phone: "254748736006"}, location: "Seminar Room 3", time: "4:30 -6:00 PM, EAT", }, title: "Thursday"},
+        {id: 5, dayLetter: "F", image: { src: friImage, alt: "day Image"}, activity: { name: "SERVICE MINISTRY",                 description: "Be refreshed and challenged as we welcome guest ministers who bring fresh perspectives and powerful messages. Experience dynamic preaching, teaching, and ministry that will inspire your faith and equip you for the journey ahead. Each week brings a new voice with unique insights to share.", coordinator: { name: "Meshack Abwolo",   phone: "254748390059"}, location: "Seminar Room 3", time: "4:30 -6:00 PM, EAT", }, title: "Friday"},
     ];
 
     // State Management
@@ -24,7 +24,7 @@ export default function Weekly2(){
 
     // Functional components
     
-    const Card = React.memo(function Card({title, image, activityName, activityDescription, coordinatorName, coordinatorPhone}){
+    const Card = React.memo(function Card({title, image, activityName, activityDescription, activityLocation, activityTime, coordinatorName, coordinatorPhone}){
       return(
         <div className="content">          
           
@@ -37,6 +37,7 @@ export default function Weekly2(){
               <h3 className="card-title">{title}</h3>
               <h1 className="activity">{activityName}</h1>
               <p className="description">{activityDescription}</p>
+              <p> {activityLocation} <br/> {activityTime}</p>
               <div className="buttons">
                 <WhatsAppButton 
                    btnClassName={"whatsap"}
@@ -68,6 +69,8 @@ export default function Weekly2(){
                 image={image}
                 activityName={activity.name}
                 activityDescription={activity.description}
+                activityLocation={activity.location}
+                activityTime={activity.time}
                 coordinatorName={activity.coordinator.name}
                 coordinatorPhone={activity.coordinator.phone}
               />

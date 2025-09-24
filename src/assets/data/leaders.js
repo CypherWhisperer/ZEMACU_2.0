@@ -143,7 +143,7 @@ export default [
     {
         id: 6,
         rank: "PRAISE & WORSHIP CORDINATOR",
-        name: "Margaret",
+        name: "Margaret Kariuki",
         info: "Margaret oversees worship teams and plans praise and worship sessions.",
         phone: "254745208720",
         socialHandles: [

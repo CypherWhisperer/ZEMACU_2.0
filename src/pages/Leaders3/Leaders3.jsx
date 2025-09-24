@@ -68,7 +68,7 @@ const Leader = React.memo(function Leader({ bgImage, leaderImage, rank, leaderNa
               <div className="leader-info">
                 {leaderName}
 
-                <div className="handles-container"> 
+                {/* <div className="handles-container"> 
                   {leaderHandles.map((handle) => {
                     return(
                       <Handle 
@@ -79,7 +79,7 @@ const Leader = React.memo(function Leader({ bgImage, leaderImage, rank, leaderNa
                       />
                     )
                   })}
-                </div>
+                </div> */}
 
               </div>
               <p className="description"> {leaderInfo}</p>
@@ -92,7 +92,7 @@ const Leader = React.memo(function Leader({ bgImage, leaderImage, rank, leaderNa
                   targetPhone={leaderPhone}
                 />
                 
-                <button type="button">Committee</button>                          
+                {/* <button type="button">Committee</button>                           */}
               </div>
             </motion.article>
         </motion.div>

@@ -3,7 +3,7 @@
 :root {
   --main_purple_color: #a117a4;
   --footer_primary_color: #c5c6c8;
-  --footer_secondary_color: #0d0e10;  
+  --footer_secondary_color: #0d0e10;
   --footer_accent_color: #282728;
 }
 
@@ -68,7 +68,7 @@
   align-items: center;
   margin-left: 2rem;
   /* color: var(--main_purple_color); */
-  color: #731382;
+  color: #62048E;
 }
 
 .main-container .upper-container .logo-container .logo-image {
@@ -118,7 +118,8 @@
 .main-container .upper-container .developer-contacts .dev-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0;
   margin-right: 2rem;
 }
 
@@ -147,9 +148,11 @@
   height: 2px;
   background: linear-gradient(to right,
       transparent,
-      var(--footer_accent_color),
+      /*var(--footer_accent_color),*/
+      #000000,
       transparent);
   margin: 2rem 0;
+  width: 90%;
 }
 
 /* ====================== LOWER CONTAINER ======================= */
@@ -176,6 +179,10 @@
 @media(max-width: 425px) {
   .main-container {
     flex-direction: column;
+  }
+
+  .main-container h1 {
+    font-size: 2.3rem;
   }
 
   .main-container .upper-container {
@@ -208,7 +215,7 @@
     padding: 0.5rem;
   }
 
-  .main-container .upper-container .logo-container .logo-image{
+  .main-container .upper-container .logo-container .logo-image {
     width: 7rem;
     height: 7rem;
   }

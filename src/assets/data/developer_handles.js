@@ -8,42 +8,42 @@ export default [
     name: "Cypher Whisperer",
     handles: [
         {
-        link: "https://gmail.com/yourhandle",
+        link: "mailto:cypherwhisperer@gmail.com",
         img: {
           src: gmail_logo,
           alt: "Gmail Logo"
         }
       }, 
       {
-        link: "https://web.whatsapp.com/send?phone=254702788971&text=hello",
+        link: "https://web.whatsapp.com/send?phone=254799665794&text=hello",
         img: {
           src: whatsapp_logo,
           alt: "Whatsapp Logo"
         }
       },
       {
-        link: "https://x.com/yourhandle",
+        link: "https://x.com/CypherWhisperer",
         img: {
           src: x_logo,
           alt: "X Logo"
         }
       },
+      // {
+      //   link: "https://instagram.com/yourhandle",
+      //   img: {
+      //     src: instagram_logo,
+      //     alt: "Instagram Logo"
+      //   }
+      // },
+      // {
+      //   link: "https://linkedin.com/CypherWhisperer",
+      //   img: {
+      //     src: linkedin_logo,
+      //     alt: "LinkedIn Logo"
+      //   }
+      // },
       {
-        link: "https://instagram.com/yourhandle",
-        img: {
-          src: instagram_logo,
-          alt: "Instagram Logo"
-        }
-      },
-      {
-        link: "https://linkedin.com/yourhandle",
-        img: {
-          src: linkedin_logo,
-          alt: "LinkedIn Logo"
-        }
-      },
-      {
-        link: "https://github.com.com/yourhandle",
+        link: "https://github.com/CypherWhisperer",
         img: {
           src: github_logo,
           alt: "Github Logo"
@@ -55,43 +55,43 @@ export default [
     id: 2,
     name: "Wenels @KWDesigns",
     handles: [
+      // {
+      //   link: "https://gmail.com/yourhandle",
+      //   img: {
+      //     src: gmail_logo,
+      //     alt: "Gmail Logo"
+      //   }
+      // }, 
       {
-        link: "https://gmail.com/yourhandle",
-        img: {
-          src: gmail_logo,
-          alt: "Gmail Logo"
-        }
-      }, 
-      {
-        link: "https://web.whatsapp.com/send?phone=254702788971&text=hello",
+        link: "https://web.whatsapp.com/send?phone=254708816796&text=hello",
         img: {
           src: whatsapp_logo,
           alt: "Whatsapp Logo"
         }
       },
+      // {
+      //   link: "https://x.com/yourhandle",
+      //   img: {
+      //     src: x_logo,
+      //     alt: "X Logo"
+      //   }
+      // },
+      // {
+      //   link: "https://instagram.com/yourhandle",
+      //   img: {
+      //     src: instagram_logo,
+      //     alt: "Instagram Logo"
+      //   }
+      // },
+      // {
+      //   link: "https://linkedin.com/yourhandle",
+      //   img: {
+      //     src: linkedin_logo,
+      //     alt: "LinkedIn Logo"
+      //   }
+      // },
       {
-        link: "https://x.com/yourhandle",
-        img: {
-          src: x_logo,
-          alt: "X Logo"
-        }
-      },
-      {
-        link: "https://instagram.com/yourhandle",
-        img: {
-          src: instagram_logo,
-          alt: "Instagram Logo"
-        }
-      },
-      {
-        link: "https://linkedin.com/yourhandle",
-        img: {
-          src: linkedin_logo,
-          alt: "LinkedIn Logo"
-        }
-      },
-      {
-        link: "https://github.com.com/yourhandle",
+        link: "https://github.com/wenels",
         img: {
           src: github_logo,
           alt: "Github Logo"
@@ -103,43 +103,43 @@ export default [
     id: 3,
     name: "William Warren",
     handles: [
+      // {
+      //   link: "https://gmail.com/yourhandle",
+      //   img: {
+      //     src: gmail_logo,
+      //     alt: "Gmail Logo"
+      //   }
+      // }, 
       {
-        link: "https://gmail.com/yourhandle",
-        img: {
-          src: gmail_logo,
-          alt: "Gmail Logo"
-        }
-      }, 
-      {
-        link: "https://web.whatsapp.com/send?phone=254702788971&text=hello",
+        link: "https://web.whatsapp.com/send?phone=254114692825&text=hello",
         img: {
           src: whatsapp_logo,
           alt: "Whatsapp Logo"
         }
       },
+      // {
+      //   link: "https://x.com/yourhandle",
+      //   img: {
+      //     src: x_logo,
+      //     alt: "X Logo"
+      //   }
+      // },
+      // {
+      //   link: "https://instagram.com/yourhandle",
+      //   img: {
+      //     src: instagram_logo,
+      //     alt: "Instagram Logo"
+      //   }
+      // },
       {
-        link: "https://x.com/yourhandle",
-        img: {
-          src: x_logo,
-          alt: "X Logo"
-        }
-      },
-      {
-        link: "https://instagram.com/yourhandle",
-        img: {
-          src: instagram_logo,
-          alt: "Instagram Logo"
-        }
-      },
-      {
-        link: "https://linkedin.com/yourhandle",
+        link: "http://linkedin.com/in/williamnyaranga",
         img: {
           src: linkedin_logo,
           alt: "LinkedIn Logo"
         }
       },
       {
-        link: "https://github.com.com/yourhandle",
+        link: "https://github.com/william-nyarash",
         img: {
           src: github_logo,
           alt: "Github Logo"
@@ -151,43 +151,43 @@ export default [
     id: 4,
     name: "Erick Mwangi",
     handles: [
+      // {
+      //   link: "https://gmail.com/yourhandle",
+      //   img: {
+      //     src: gmail_logo,
+      //     alt: "Gmail Logo"
+      //   }
+      // }, 
       {
-        link: "https://gmail.com/yourhandle",
-        img: {
-          src: gmail_logo,
-          alt: "Gmail Logo"
-        }
-      }, 
-      {
-        link: "https://web.whatsapp.com/send?phone=254702788971&text=hello",
+        link: "https://web.whatsapp.com/send?phone=254712935528&text=hello",
         img: {
           src: whatsapp_logo,
           alt: "Whatsapp Logo"
         }
       },
+      // {
+      //   link: "https://x.com/yourhandle",
+      //   img: {
+      //     src: x_logo,
+      //     alt: "X Logo"
+      //   }
+      // },
+      // {
+      //   link: "https://instagram.com/yourhandle",
+      //   img: {
+      //     src: instagram_logo,
+      //     alt: "Instagram Logo"
+      //   }
+      // },
+      // {
+      //   link: "https://linkedin.com/yourhandle",
+      //   img: {
+      //     src: linkedin_logo,
+      //     alt: "LinkedIn Logo"
+      //   }
+      // },
       {
-        link: "https://x.com/yourhandle",
-        img: {
-          src: x_logo,
-          alt: "X Logo"
-        }
-      },
-      {
-        link: "https://instagram.com/yourhandle",
-        img: {
-          src: instagram_logo,
-          alt: "Instagram Logo"
-        }
-      },
-      {
-        link: "https://linkedin.com/yourhandle",
-        img: {
-          src: linkedin_logo,
-          alt: "LinkedIn Logo"
-        }
-      },
-      {
-        link: "https://github.com.com/yourhandle",
+        link: "https://github.com/yourhandle",
         img: {
           src: github_logo,
           alt: "Github Logo"
@@ -199,48 +199,48 @@ export default [
     id: 5,
     name: "Humphrey Kimani",
     handles: [
+      // {
+      //   link: "https://gmail.com/yourhandle",
+      //   img: {
+      //     src: gmail_logo,
+      //     alt: "Gmail Logo"
+      //   }
+      // }, 
       {
-        link: "https://gmail.com/yourhandle",
-        img: {
-          src: gmail_logo,
-          alt: "Gmail Logo"
-        }
-      }, 
-      {
-        link: "https://web.whatsapp.com/send?phone=254702788971&text=hello",
+        link: "https://web.whatsapp.com/send?phone=254741992093&text=hello",
         img: {
           src: whatsapp_logo,
           alt: "Whatsapp Logo"
         }
       },
+      // {
+      //   link: "https://x.com/yourhandle",
+      //   img: {
+      //     src: x_logo,
+      //     alt: "X Logo"
+      //   }
+      // },
       {
-        link: "https://x.com/yourhandle",
-        img: {
-          src: x_logo,
-          alt: "X Logo"
-        }
-      },
-      {
-        link: "https://instagram.com/yourhandle",
+        link: "https://www.instagram.com/_rey_254?igsh=MXNkbGdyZjBzcTM4bQ==",
         img: {
           src: instagram_logo,
           alt: "Instagram Logo"
         }
       },
       {
-        link: "https://linkedin.com/yourhandle",
+        link: "https://www.linkedin.com/in/humphrey-k-kimani-970276367?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         img: {
           src: linkedin_logo,
           alt: "LinkedIn Logo"
         }
       },
-      {
-        link: "https://github.com.com/yourhandle",
-        img: {
-          src: github_logo,
-          alt: "Github Logo"
-        }
-      } 
+      // {
+      //   link: "https://github.com.com/yourhandle",
+      //   img: {
+      //     src: github_logo,
+      //     alt: "Github Logo"
+      //   }
+      // } 
     ]
   }
 ]

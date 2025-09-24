@@ -60,7 +60,7 @@ import secretayImage     from    './images/leaders/main/secretary.webp'
 import secretaryBg       from    './images/leaders/bg/secretary.webp'
 import treasurerImage    from    './images/leaders/main/treasury.webp'
 import treasurerBg       from    './images/leaders/bg/treasury.webp'
-import mediaImage        from    './images/leaders/main/media.webp'
+import mediaImage        from    './images/leaders/main/media.jpeg'
 import mediaBg           from    './images/leaders/bg/media.webp'
 // -- Weekly Page
 import monImage          from    './images/weekly/mon.webp'
