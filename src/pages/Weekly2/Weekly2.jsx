@@ -2,8 +2,7 @@ import './Weekly2.css'
 import { useState } from 'react';
 import React from 'react';
 // Assets
-import { monImage, tueImage, wedImage, thurImage, friImage } from '../../assets/assets.js';
-
+import { ImLocation, MdOutlineAccessTimeFilled, monImage, tueImage, wedImage, thurImage, friImage } from '../../assets/assets.js';
 // components
 import { Footer, WhatsAppButton } from '../../components/components.js'
 
@@ -17,7 +16,7 @@ export default function Weekly2(){
         {id: 3, dayLetter: "W", image: { src: wedImage, alt: "day Image"}, activity: { name: "PRAYER & DEVOTION",                description: "Find peace in the presence of the Almighty as we gather for focused prayer and reflection. This sacred time allows us to bring our burdens, gratitude, and intercessions before God, strengthening our spiritual foundation for the week ahead",                                                   coordinator: { name: "Gideon Moikan",    phone: "254112388656"}, location: "Seminar Room 3", time: "4:30 -6:00 PM, EAT", }, title: "Wednesday"},
         {id: 4, dayLetter: "T", image: { src: thurImage, alt: "day Image"},activity: { name: "DISCIPLESHIP & CREATIVE MINISTRY", description: "Grow in your faith journey while expressing your God-given creativity. From mentorship opportunities to artistic expressions of worship, discover how your unique gifts can serve the kingdom and inspire others in their walk with Christ.",                                                      coordinator: { name: "Ann Michael",      phone: "254748736006"}, location: "Seminar Room 3", time: "4:30 -6:00 PM, EAT", }, title: "Thursday"},
         {id: 5, dayLetter: "F", image: { src: friImage, alt: "day Image"}, activity: { name: "SERVICE MINISTRY",                 description: "Be refreshed and challenged as we welcome guest ministers who bring fresh perspectives and powerful messages. Experience dynamic preaching, teaching, and ministry that will inspire your faith and equip you for the journey ahead. Each week brings a new voice with unique insights to share.", coordinator: { name: "Meshack Abwolo",   phone: "254748390059"}, location: "Seminar Room 3", time: "4:30 -6:00 PM, EAT", }, title: "Friday"},
-    ];
+    ]; 
 
     // State Management
     const [activeIndex, setActiveIndex] = useState(0) // defaults to the first
@@ -37,7 +36,7 @@ export default function Weekly2(){
               <h3 className="card-title">{title}</h3>
               <h1 className="activity">{activityName}</h1>
               <p className="description">{activityDescription}</p>
-              <p> {activityLocation} <br/> {activityTime}</p>
+              <p> <ImLocation /> <span>{activityLocation}</span> <br/> <MdOutlineAccessTimeFilled /> <span>{activityTime}</span></p>
               <div className="buttons">
                 <WhatsAppButton 
                    btnClassName={"whatsap"}

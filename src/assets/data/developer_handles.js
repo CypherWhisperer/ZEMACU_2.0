@@ -1,5 +1,5 @@
 // importing Necessay assets
-import { gmail_logo, whatsapp_logo, x_logo, instagram_logo, linkedin_logo, github_logo } from '../assets.js'
+import { tiktok_logo, gmail_logo, whatsapp_logo, x_logo, instagram_logo, linkedin_logo, github_logo } from '../assets.js'
 
 // Exporting the data
 export default [
@@ -151,13 +151,13 @@ export default [
     id: 4,
     name: "Erick Mwangi",
     handles: [
-      // {
-      //   link: "https://gmail.com/yourhandle",
-      //   img: {
-      //     src: gmail_logo,
-      //     alt: "Gmail Logo"
-      //   }
-      // }, 
+      {
+        link: "https://www.tiktok.com/@blackk_emoji10?is_from_webapp=1&sender_device=pc",
+        img: {
+          src: tiktok_logo,
+          alt: "TikTok Logo"
+        }
+      }, 
       {
         link: "https://web.whatsapp.com/send?phone=254712935528&text=hello",
         img: {
@@ -165,29 +165,29 @@ export default [
           alt: "Whatsapp Logo"
         }
       },
-      // {
-      //   link: "https://x.com/yourhandle",
-      //   img: {
-      //     src: x_logo,
-      //     alt: "X Logo"
-      //   }
-      // },
-      // {
-      //   link: "https://instagram.com/yourhandle",
-      //   img: {
-      //     src: instagram_logo,
-      //     alt: "Instagram Logo"
-      //   }
-      // },
-      // {
-      //   link: "https://linkedin.com/yourhandle",
-      //   img: {
-      //     src: linkedin_logo,
-      //     alt: "LinkedIn Logo"
-      //   }
-      // },
       {
-        link: "https://github.com/yourhandle",
+        link: "https://x.com/Emoji88855688",
+        img: {
+          src: x_logo,
+          alt: "X Logo"
+        }
+      },
+      {
+        link: "https://www.instagram.com/_b_lac.ky_?utm_source=qr&igsh=MWk4ZjdhaW1qbGJleg==",
+        img: {
+          src: instagram_logo,
+          alt: "Instagram Logo"
+        }
+      },
+      {
+        link: "http://www.linkedin.com/in/erick-mwangi-09960137b",
+        img: {
+          src: linkedin_logo,
+          alt: "LinkedIn Logo"
+        }
+      },
+      {
+        link: "https://github.com/blackkemoji",
         img: {
           src: github_logo,
           alt: "Github Logo"

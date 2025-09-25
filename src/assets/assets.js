@@ -127,6 +127,9 @@ import support_us_icon from  './icons/bxs-donate-heart.svg'
 import arrow_left from       './icons/bxs-chevron-left.svg'
 import arrow_right from      './icons/bxs-chevron-right.svg'
 
+// REACT  ICONS
+import { ImLocation } from 'react-icons/im'
+import { MdOutlineAccessTimeFilled } from 'react-icons/md'
 // Logos
 import zemacu_logo from     './logos/zemacu-logo.svg'
 import gmail_logo from      './logos/bxl-gmail.svg'
@@ -226,6 +229,9 @@ export {
     support_us_icon,
     arrow_left,
     arrow_right,
+    // REACT ICONS
+    ImLocation,
+    MdOutlineAccessTimeFilled,
 
     // ======= LOGOS =========
     zemacu_logo,

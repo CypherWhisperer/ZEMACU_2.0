@@ -1,16 +1,13 @@
 import './Support.css'
+import { useRef } from 'react'
 
 // Components 
 import { Footer } from '../../components/components.js'
 
 export default function Support(){
-
-  const scrollToView = () => {
-    document.getElementById('payment-section').scrollIntoView({
-      behavior: "smooth",
-    });
-  }
-
+  
+  const paymentRef = useRef(null);
+  
   return(
     <>
       <main id="supportMainContainer" className="support-container">
@@ -26,7 +23,18 @@ export default function Support(){
               Help us maintain the heartbeat of our Christian Union as we gather, grow, and serve together. Your general support covers the essential foundations that make our weekly activities possible: from venue costs and study materials to hospitality and outreach efforts.
               <br/> <br/> When you contribute to our general fund, you're investing in every aspect of our ministry - the quiet moments of prayer devotion, the joyful sounds of praise practice, the deep discussions in Bible study, the creative expressions of faith, and the powerful messages from visiting ministers. Your support ensures that our doors remain open and our programs continue to thrive, creating space where lives are transformed and community is built.
             </p>
-            <button className="cta-button" onclick="handleGeneralSupport()">
+            <button className="cta-button" 
+              onClick={() => {
+                // Querying the element by ID - say in a case where the element is dynamically rendered
+                // const element = document.getElementById("payment-section");
+                // element?.scrollIntoView();
+
+                // For this one, we'll go for useRef approach
+                paymentRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                });
+              }}
+            >
               <span>Support Us</span>
               <svg className="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M5 12h14M12 5l7 7-7 7" />
@@ -56,7 +64,13 @@ export default function Support(){
               We have a vision to amplify God's message through modern technology and professional-quality media instruments. This specialized project aims to equip our ministry with the tools needed to record, stream, and share our worship, teaching, and testimonies with a broader audience.
               <br/> <br/>Your contribution to our Media Ministry Project will help us acquire essential equipment including audio recording systems, cameras, lighting, and broadcasting tools. This investment extends our reach beyond our physical gathering space, allowing us to touch hearts across digital platforms, preserve powerful moments of ministry, and create resources that can bless others long after the service ends.
             </p>
-            <button className="cta-button" onclick="handleProjectSupport()">
+            <button className="cta-button" 
+              onClick={() => {
+                paymentRef.current.scrollIntoView({
+                    behavior: "smooth",
+                });
+              }}
+            >
               <span>Support Projects</span>
               <svg className="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M5 12h14M12 5l7 7-7 7" />
@@ -65,7 +79,7 @@ export default function Support(){
           </div>
         </div>
         {/* Payment Methods Section */}
-        <section id="payment-section" className="section-title">
+        <section ref={paymentRef} id="payment-section" className="section-title">
           <h1 className="title-text">PAYMENT METHODS</h1>
           <div className="title-line" />
         </section>

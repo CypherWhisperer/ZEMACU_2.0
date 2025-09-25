@@ -60,7 +60,7 @@ export default function Landing() {
             targetPhone={leadersData[9].phone}
           />
         </section>
-      </main>
+      </main>      
       <Footer />
     </>
   )
@@ -145,7 +145,7 @@ function MainPortion() {
               <Modal
                 modalOpen={modalOpen}
                 handleClose={close}
-                content={"Hello there Nerd"}
+                content={"Appologies: Feature still Under Development ..."}
               />
             }
           </AnimatePresence>
