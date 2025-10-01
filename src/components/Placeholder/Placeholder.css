@@ -1,0 +1,45 @@
+.placeholder-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.placeholder-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.placeholder-header > button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+    color: #FFF;
+    font-family: Poppins;
+    letter-spacing: 0.2rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+h2 {
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+.form-container {
+    flex: 1;
+}
+
+@media (max-width: 450px) {
+    .placeholder-header > button {
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+

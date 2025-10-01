@@ -2,17 +2,17 @@ import './Nav.css'
 
 // React Stuff 
 import { useState } from  "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate, useLocation } from "react-router-dom"
+
+// Assets
+import { formsData  } from '../../assets/assets'
 
 export default function Nav({ expanded, toggle }){
   // State Management 
   const [isSideBarOpen, setIsSideBarOpen] = useState(false) 
-  const [activeModal, setActiveModal] = useState(null) 
   const [activeDropDown, setActiveDropDown] = useState(null)
 
   const toggleSidebar = () => setIsSideBarOpen(!isSideBarOpen) 
-  const openModal = (id) => setActiveModal(id) 
-  const closeModal = () => setActiveModal(null)
   const toggleDropDown = (dropdownID) => {
     // Curr setup allows for more than one elements bearing the 'has-dropdown' class
     // If the clicked dropdown is active, close it (set to null)
@@ -24,6 +24,21 @@ export default function Nav({ expanded, toggle }){
     setIsSideBarOpen(false);   // closes the sidebar
     if (expanded) toggle();    // collapse if parent also tracks expanded
   };
+
+  // Handling Navigation to the placeholder route for Google Forms
+  // We need to pass { state: { from: location.pathname } } so Placeholder can send user back to the exact page they came from.
+  const location = useLocation();
+  const navigate = useNavigate();
+  function openForm(id){
+    // Validating that id is one of the keys in formsData
+    if (!formsData[id]) {
+      console.warn(`Error: Unknown form id: ${id}`);
+      return;
+    }
+    navigate(`/form/${encodeURIComponent(id)}`, {
+      state: {from: location.pathname} // For routing back to prev ...
+     })
+  }
 
   return(
     <>
@@ -100,19 +115,19 @@ export default function Nav({ expanded, toggle }){
                 
                 <ul className="sidebar-dropdown"> 
                   <li className="sidebar-item">
-                    <button className="modal-trigger" data-target="prayerModal" onClick={() => {openModal("prayer"); handleLinkClick();}}> 
+                    <button className="modal-trigger" onClick={() => openForm('prayer_requests')}> 
                         Prayer Request
                     </button>
                   </li>
 
                   <li className="sidebar-item">
-                    <button className="modal-trigger" data-target="testimonyModal" onClick={() => {openModal("testimonies"); handleLinkClick();}}>
+                    <button className="modal-trigger" onClick={() => openForm('testimony_submissions')}>
                         Testimonies
                     </button>
                   </li>
 
                   <li className="sidebar-item">
-                    <button className="modal-trigger" data-target="feedBackModal" onClick={() => {openModal("feedback"); handleLinkClick();}}>
+                    <button className="modal-trigger" onClick={() => openForm('feedback_submissions')}>
                         FeedBack
                     </button>
                   </li> 
@@ -137,39 +152,13 @@ export default function Nav({ expanded, toggle }){
               </svg>
 
               <span>
-                <button className="register modal-trigger" data-target="registerModal" onClick={() => {openModal("register"); handleLinkClick();}}>
+                <button className="register" onClick={() => openForm('registration')}>
                   Register
                 </button>
               </span> 
-          </div>
-        
+          </div>        
         </div>
-
       </div>
-      
-      {/*  This Code */}
-      {activeModal && (
-        <div className="modal">
-          <div className="modal-content">
-             <button className="close-btn" onClick={closeModal}>
-               ✖
-            </button>
-            {activeModal === "prayer" &&(
-              <iframe src="https://form.jotform.com/your-prayer-form-id"></iframe>
-            )}
-            {activeModal === "testimony" &&(
-              <iframe src="https://form.jotform.com/your-testimony-form-id"></iframe>
-            )}
-            {activeModal === "feedback" &&(
-              <iframe src="https://form.jotform.com/your-feedback-form-id"></iframe>
-            )}
-            {activeModal === "register" &&(
-              <iframe src="https://form.jotform.com/your-register-form-id"></iframe>
-            )}
-          </div>
-        </div>
-      )} 
-      
     </>
   )
 }

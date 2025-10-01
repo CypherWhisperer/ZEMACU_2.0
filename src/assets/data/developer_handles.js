@@ -132,7 +132,7 @@ export default [
       //   }
       // },
       {
-        link: "http://linkedin.com/in/williamnyaranga",
+        link: "https://www.linkedin.com/in/william-nyaranga",
         img: {
           src: linkedin_logo,
           alt: "LinkedIn Logo"

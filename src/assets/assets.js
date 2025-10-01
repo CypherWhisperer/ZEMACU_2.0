@@ -148,6 +148,7 @@ import threads_logo from    './logos/threads.svg'
 import developerData from './data/developer_handles.js'
 import leadersData   from './data/leaders.js'
 import testimonials from './data/testimonials.js'
+import { formsData } from './data/formsData.js'
 
 // Exporting the assets
 export {
@@ -252,5 +253,6 @@ export {
     // ====== DATA ========
     developerData,
     leadersData,
-    testimonials
+    testimonials,
+    formsData,
 }

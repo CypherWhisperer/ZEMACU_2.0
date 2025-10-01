@@ -2,24 +2,35 @@ import './Home.css'
 import './InfiniteSlider.css'
 
 import React from 'react'
+
 // Assets 
 import { testimonials } from '../../assets/assets.js'
 
 // components 
-import { Footer } from '../../components/components.js'
+import { Footer, Form } from '../../components/components.js'
 
 // Functional Components
 export default function Home(){
+
   return(
     <>
       <main className="home-container">
         <h1> Basically a trial and error play ground </h1>
         <InfiniteSlider />
+        <section>
+          <Form 
+            formType={"prayer"}
+            contactRequired={true}
+            hasMessage={true}
+            MessageLabel={"Prayer"}
+          />
+        </section>
       </main>      
       <Footer />
     </>
   )
 }
+
 
 // INFINITE SLIDER COMPONENT
 function InfiniteSlider() {
