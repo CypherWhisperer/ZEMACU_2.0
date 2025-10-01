@@ -1,11 +1,12 @@
 import './Landing.css'
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 // Components 
 import { Footer, WhatsAppButton, Modal } from '../../components/components.js'
 // Assets
-import { leadersData, testimonials, landscapeImage1, landscapeImage2, portraitImage1 } from '../../assets/assets.js'
+import { formsData, leadersData, testimonials, landscapeImage1, landscapeImage2, portraitImage1 } from '../../assets/assets.js'
 
 
 // Function to handle launching a modal
@@ -67,9 +68,24 @@ export default function Landing() {
 }
 
 function MainPortion() {
-  const [modalOpen, setModalOpen] = useState(false)
-  const open = () => setModalOpen(true)
-  const close = () => setModalOpen(false)
+  // const [modalOpen, setModalOpen] = useState(false)
+  // const open = () => setModalOpen(true)
+  // const close = () => setModalOpen(false)
+
+  // Handling Navigation to the placeholder route for Google Forms
+  // We need to pass { state: { from: location.pathname } } so Placeholder can send user back to the exact page they came from.
+  const location = useLocation();
+  const navigate = useNavigate();
+  function openForm(id){
+    // Validating that id is one of the keys in formsData
+    if (!formsData[id]) {
+      console.warn(`Error: Unknown form id: ${id}`);
+      return;
+    }
+    navigate(`/form/${encodeURIComponent(id)}`, {
+      state: {from: location.pathname} // For routing back to prev ...
+     })
+  }
 
   return (
     <>
@@ -124,13 +140,14 @@ function MainPortion() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            onClick={() => (modalOpen ? close() : open())}
+            // onClick={() => (modalOpen ? close() : open())}
+            onClick={() => openForm('registration')}
             className="landing-hero-button"
           >
             REGISTER
           </motion.button>
 
-          <AnimatePresence
+          {/* <AnimatePresence
             // Disabling any initial animations on children that
             // are present when the component is first rendered
             initial={false}
@@ -148,7 +165,7 @@ function MainPortion() {
                 content={"Appologies: Feature still Under Development ..."}
               />
             }
-          </AnimatePresence>
+          </AnimatePresence> */}
         </div>
 
       </article>
